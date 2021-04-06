@@ -1,0 +1,8 @@
+# IntelliJ
+.idea
+# Dependency directories
+node_modules
+# dotenv environment variables file
+.env
+# nyc raw coverage information
+.nyc_output

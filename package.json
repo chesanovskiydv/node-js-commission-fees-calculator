@@ -1,0 +1,40 @@
+{
+  "name": "js-commission-fees-calculator",
+  "version": "1.0.0",
+  "description": "js-commission-fees-calculator",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint --fix app.js src/**/*.js test/**/*.js",
+    "test": "mocha --recursive",
+    "coverage": "nyc npm run test"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "directories": {
+    "test": "test/"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.groupbwt.com:chesanovskiy_dv/node-js-commission-fees-calculator.git"
+  },
+  "author": "Chesanovskiy Denis <chesanovskiydv@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^32.3.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0",
+    "prettier": "2.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "date-fns": "^2.19.0",
+    "dotenv": "^8.2.0"
+  }
+}
