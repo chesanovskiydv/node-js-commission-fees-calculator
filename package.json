@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint --fix app.js src/**/*.js test/**/*.js",
     "test": "mocha --recursive",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc mocha --experimental-loader=@istanbuljs/esm-loader-hook --recursive"
   },
   "engines": {
     "node": ">=14"
@@ -22,6 +22,9 @@
   "author": "Chesanovskiy Denis <chesanovskiydv@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@istanbuljs/esm-loader-hook": "^0.1.2",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",

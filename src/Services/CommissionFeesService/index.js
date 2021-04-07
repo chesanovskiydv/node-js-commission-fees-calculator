@@ -2,11 +2,11 @@ import { min, max, weekLimit } from './rules.js';
 import calcCommissionFee from './utils.js';
 import ApiService from '../ApiService.js';
 import CacheService from '../CacheService.js';
-import { TRANSACTION_TYPES } from '../../Models/Transaction.js';
+import { TRANSACTION_TYPES } from '../../Models/index.js';
 
 export default class CommissionFeesService {
   constructor() {
-    this.api = new ApiService();
+    this.api = new ApiService(process.env.BASE_API_URL);
     this.cache = new CacheService();
     this.rules = {
       min,
@@ -16,7 +16,7 @@ export default class CommissionFeesService {
   }
 
   /**
-   * Get Commission fee for User from Transaction
+   * Get commission fee for User from Transaction
    *
    * @param {User} user User model
    * @param {Transaction} transaction Transaction model
@@ -24,7 +24,7 @@ export default class CommissionFeesService {
    * @returns {Promise<number>} Commission fee
    * @throws {Error} Unsupported operation type
    */
-  getCommissionFee(user, transaction) {
+  async getCommissionFee(user, transaction) {
     const { type } = transaction;
 
     if (type === TRANSACTION_TYPES.cashIn) {
@@ -38,7 +38,7 @@ export default class CommissionFeesService {
   }
 
   /**
-   * Get Commission fee for User from 'cash-in' Transaction
+   * Get commission fee for User from 'cash-in' Transaction
    *
    * @param {User} user User model
    * @param {Transaction} transaction Transaction model
@@ -56,7 +56,7 @@ export default class CommissionFeesService {
   }
 
   /**
-   * Get Commission fee for User from 'cash-out' Transaction
+   * Get commission fee for User from 'cash-out' Transaction
    *
    * @param {User} user User model
    * @param {Transaction} transaction Transaction model

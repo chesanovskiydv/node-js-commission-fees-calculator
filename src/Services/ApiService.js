@@ -1,12 +1,12 @@
 import { api } from '../utils/index.js';
 
 export default class ApiService {
-  constructor() {
-    this.http = api.createInstance(process.env.BASE_API_URL);
+  constructor(baseURL) {
+    this.http = api.createInstance(baseURL);
   }
 
   /**
-   * Get options for 'cash-in' transactions from Api
+   * Get options for 'cash-in' transactions from api
    *
    * @returns {Promise<AxiosResponse<*>>} Options for 'cash-in' transactions
    */
@@ -15,7 +15,7 @@ export default class ApiService {
   }
 
   /**
-   * Get options for 'cash-out' transactions from Api for given user type
+   * Get options for 'cash-out' transactions from api for given user type
    *
    * @param {string} type User type
    * @returns {Promise<AxiosResponse<*>>} Options for 'cash-out' transactions
